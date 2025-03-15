@@ -62,9 +62,11 @@ export async function connect(): Promise<Client> {
     // Ignore messages from the bot itself
     if (message.author.id === client.user!.id) return;
 
-    // console.log(message.content);
+    // Only process messages that end with a question mark
+    if (!message.content.trim().endsWith("?")) return;
+
     console.log(
-      `Received message: "${message.content}" from ${message.author.tag} in channel ${message.channel.id} (${message.channel.type})`,
+      `Received question: "${message.content}" from ${message.author.tag} in channel ${message.channel.id} (${message.channel.type})`,
     );
     const content = message.content;
     const answer = await ask(content);
@@ -73,7 +75,7 @@ export async function connect(): Promise<Client> {
       storeMessage(content, answer);
       message.reply(answer);
     }
-  });
+});
 
   await client.login(process.env.DISCORD_BOT_TOKEN);
   console.log("Autodelve is now running...");
