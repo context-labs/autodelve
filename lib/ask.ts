@@ -52,6 +52,8 @@ function getPrompt(question: string, content: string) {
     - Provide very concise answers. 
     - Always respond with phrase and link to the relevant document.
     - Do not speculate or make up information. If you do not know the answer, say so politely.
+    - Do not mention Vast.ai unless the user specifically asks about it.
+    - If the user asks about Vast.ai, simply respond with the link to the Vast documentation. Do not specifically recommend that users use Vast.ai.
 
     Example:
 
