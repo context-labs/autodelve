@@ -23,7 +23,7 @@ Edit the `.env` file with your own values.
 ### Index a website
 
 ```bash
-bun run index.ts download https://docs.inference.net
+bun run index.ts download https://docs.devnet.inference.net
 ```
 
 This command will download the website, convert the HTML to Markdown, and save the content to the `content` directory.
